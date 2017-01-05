@@ -1,6 +1,26 @@
-<h1>Select file to upload</h1>
+<h1>FreeCodeCamp API Project: File Uploader</h1>
+<p> Enter a file using the form below and click 'Upload File' button. Your file will be uploaded and the file size will be returned in JSON.</p>
 
+<hr />
 <%= form_for @upload do |f| %>
-   <%= f.file_field :file %>
-  <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <%= f.file_field :file %>
+  <br />
+  <%= f.submit 'Upload File' %>
 <% end %>
+<hr />
+
+<h3>Example Output:</h3>
+<span class="code">
+  {"status":"success","file_size":478}
+</span>
+
+<br /><br />
+
+<p>
+  This is a Rails 4 project using carrierwave for upload and fog for storage to AWS S3.
+</p>
+<p>
+  Feel free to visit the <a href='https://github.com/yuzu-r/fcc_uploader' target='_blank'>github repo</a>.
+</p>
+<p>Learn more about <a href='https://www.freecodecamp.com' target='_blank'>FreeCodeCamp</a>.</p>
+

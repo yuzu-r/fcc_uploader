@@ -4,15 +4,18 @@ class UploadsController < ApplicationController
   end
 
   def create
-    file = params[:upload][:file]
-    file_size = file.size
-    @upload = Upload.create(upload_params)
-    if @upload.valid?
-      render :json => {message: 'success', file_size: file_size}
+    if params[:upload]
+      file = params[:upload][:file]
+      file_size = file.size
+      @upload = Upload.create(upload_params)
+      if @upload.valid?
+        render :json => {status: 'success', file_size: file_size}
+      else
+        render :json => {status: 'error'}
+      end
     else
-      render :json => {message: 'error'}
+      render :json => {status: 'no file'}
     end
-
   end
 
   private

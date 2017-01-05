@@ -1,0 +1,6 @@
+<h1>Select file to upload</h1>
+
+<%= form_for @upload do |f| %>
+   <%= f.file_field :file %>
+  <%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>

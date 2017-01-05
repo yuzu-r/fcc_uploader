@@ -10,6 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'fog'
 gem 'figaro'
 
 group :production do 
